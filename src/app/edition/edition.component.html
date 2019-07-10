@@ -1,0 +1,13 @@
+<section>
+  <form (submit)='save()'>
+    <p>titre :</p>
+    <input name="titre" type="text" [(ngModel)]="actu.titre"><br/>
+    <p>alias :</p>
+    <input name="alias" type="text" [(ngModel)]="actu.alias"><br/>
+    <p>description :</p>
+    <input name="description" type="text" [(ngModel)]="actu.description"><br/>
+    <p>url de l'image :</p>
+    <input name="img" type="text" [(ngModel)]="actu.img"><br/>
+    <input type="submit" value="Sauvegarder">
+  </form>
+</section>
