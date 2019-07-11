@@ -29,6 +29,12 @@ export class ConnexionService {
     return eval(sessionStorage.getItem('connecte'));
   }
 
+  disconnect(){
+    this.connecte = false;
+    this.complot.jambon=false;
+    sessionStorage.setItem('connecte', this.connecte.toString());
+  }
+
   toutLeMondePeutChanger(){
     console.log("Mon ID = ", this.user.identifiant);
   }

@@ -29,6 +29,7 @@ export class EditionComponent implements OnInit {
       this.actu.alias = this.actuServ.listeActu[this.newsId].alias;
       this.actu.description = this.actuServ.listeActu[this.newsId].description;
       this.actu.img = this.actuServ.listeActu[this.newsId].img;
+      this.actu.auteur = this.actuServ.listeActu[this.newsId].auteur;
     });
   }
 

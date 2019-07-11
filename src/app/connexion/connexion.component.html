@@ -1,8 +1,9 @@
 <section>
-  <form (submit)="conServ.envoieConne()">
-    <input name="id" type="text" [(ngModel)]="conServ.user.identifiant" minlength="6" placeholder="Saisissez votre identifiant">
-    <input name="mdp" type="password" [(ngModel)]="conServ.user.mdp" minlength="8" placeholder="Saisissez votre mot de passe">
+  <form (submit)="conServ.envoieConne()" *ngIf="!conServ.connecte">
+    <input name="id" type="text" [(ngModel)]="conServ.user.identifiant" minlength="6" placeholder="Saisissez votre identifiant" require>
+    <input name="mdp" type="password" [(ngModel)]="conServ.user.mdp" minlength="8" placeholder="Saisissez votre mot de passe" require>
     <input type="submit" value="S'identifier">
     <input type="reset" value="Annuler">
   </form>
+  <button (click)="conServ.disconnect()" *ngIf="conServ.connecte">déconnection</button>
   </section>
