@@ -1,12 +1,17 @@
 <section>
-    <article *ngFor="let a of adrien.listeActu; let i=index">
-      <a href [routerLink]="['/actualite', i]">
-        <header>
-              <h3>{{ i+1 }} - {{ a.titre }}</h3>
-            </header>
-        <img [src]="a.img" [title]="a.alias"/>
-        <p>{{ a.description }}</p>
-      </a>
-      <a href [routerLink]="['/edition', i]">éditer l'actualité</a>
-    </article>
-  </section>
+  <label>recherche : </label>
+  <input type="text" name="filtre" [(ngModel)]="filter">
+  <article *ngFor="let a of adrien.listeActu|newsPipe:filter">
+    <a href [routerLink]="['/actualite', adrien.listeActu.indexOf(a)]">
+      <header>
+            <h3>{{ adrien.listeActu.indexOf(a)+1 }} - {{ a.titre }}</h3>
+          </header>
+      <img [src]="a.img" [title]="a.alias"/>
+      <p>{{ a.description }}</p>
+    </a>
+    <a href [routerLink]="['/edition', i]">éditer l'actualité</a>
+  </article>
+  <!-- <button (click)="movePage(-3)" *ngIf="0<debut"><</button>
+  <label>{{debut}}-{{debut+ecart}}</label>
+  <button (click)="movePage(3)" *ngIf="debut+3<adrien.listeActu.length">></button> -->
+</section>

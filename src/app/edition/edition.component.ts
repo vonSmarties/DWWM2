@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActuService } from '../services/actu.service';
-import { Actu } from '../modele/actu';;
+import { Actu } from '../modele/actu';
 
 @Component({
   selector: 'app-edition',

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { EditionGuard } from './edition.guard';
+import { EditionGuard } from './services/edition.guard';
 
 import { AccueilComponent } from './accueil/accueil.component';
 import { ListeActuComponent } from './liste-actu/liste-actu.component';
@@ -12,8 +12,8 @@ import { EditionComponent } from './edition/edition.component';
 const routes: Routes = [
   {path:'', component:AccueilComponent},
   {path:'actualites', component:ListeActuComponent},
-  {path:'actualite', component:ActuComponent},
   {path:'actualite/:francois', component:ActuComponent},
+  {path:'edition', component:EditionComponent, canActivate: [EditionGuard]},
   {path:'edition/:francois', component:EditionComponent, canActivate: [EditionGuard] },
   {path:'connexion', component:ConnexionComponent}
 ];

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Utilisateur } from '../modele/utilisateur';
-import { EditionGuard } from '../edition.guard';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +8,9 @@ export class ConnexionService {
 
   user:Utilisateur;
   connecte:boolean;
+  token:string='bouya';
 
-  constructor(public complot:EditionGuard) {
+  constructor() {
     this.connecte = this.getConnecte();
     this.user = {
       identifiant:'',
@@ -21,7 +21,6 @@ export class ConnexionService {
   envoieConne(){
     console.log("Ma conne = ", this.user);
     this.connecte = true;
-    this.complot.jambon=true;
     sessionStorage.setItem('connecte', this.connecte.toString());
   }
 
@@ -31,7 +30,6 @@ export class ConnexionService {
 
   disconnect(){
     this.connecte = false;
-    this.complot.jambon=false;
     sessionStorage.setItem('connecte', this.connecte.toString());
   }
 
