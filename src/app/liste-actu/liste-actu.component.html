@@ -9,7 +9,7 @@
       <img [src]="a.img" [title]="a.alias"/>
       <p>{{ a.description }}</p>
     </a>
-    <a href [routerLink]="['/edition', i]">éditer l'actualité</a>
+    <a href [routerLink]="['/edition', adrien.listeActu.indexOf(a)]">éditer l'actualité</a>
   </article>
   <!-- <button (click)="movePage(-3)" *ngIf="0<debut"><</button>
   <label>{{debut}}-{{debut+ecart}}</label>
